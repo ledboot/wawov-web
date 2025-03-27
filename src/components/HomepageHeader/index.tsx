@@ -74,7 +74,7 @@ export default function HomepageHeader() {
               <div className="flex items-center justify-center gap-4 ml-5">
                 <Monitor className="w-10 h-10 inline-block text-[#ff6b53]" />
                 <h3 className="text-xl leading-6 inline-block font-bold mb-0">
-                  Web Development
+                  Backend Development
                 </h3>
               </div>
             </div>

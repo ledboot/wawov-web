@@ -36,45 +36,45 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/ledboot/wawov-web/tree/main/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: {},
         theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
     ],
   ],
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
 
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     metadata: [
       { name: 'author', content: 'Gwynn' },
-      { name: 'keywords', content: 'blog,个人网站, golang, blockchain, devops, 知识分享' },
+      { name: 'keywords', content: 'wawov,个人网站, golang, blockchain, devops, 知识分享' },
       { name: 'description', content: 'Gwynn的知识库，分享技术，分享生活' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'robots', content: 'index, follow' },
       { name: 'google-adsense-account', content: 'ca-pub-3198470578962995' },
     ],
+    algolia: {
+      appId: '1CCGLI5COR',
+      apiKey: 'f47fda380029faa9451ba4dd591207e3',
+      indexName: 'wawov',
+      contextualSearch: true,
+      searchParameters: {},
+      searchPagePath: 'search',
+      insights: true,
+    },
     navbar: {
       title: 'wawov',
       logo: {
@@ -84,9 +84,10 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'mainSidebar',
           position: 'left',
-          label: '文档',
+          label: '从零开始',
+          to: '/docs/lean',
         },
         { href: 'https://blog.wawov.com', label: '博客', position: 'left' },
         {
