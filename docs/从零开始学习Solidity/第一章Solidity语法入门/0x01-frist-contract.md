@@ -1,9 +1,10 @@
 ---
 slug: '/docs/lean/solidity/chapter1/0x01-frist-contract'
 title: '0x01：第一个智能合约——Hello World'
-description: '学习Solidity的第一步，从Hello World开始'
 hide_title: true
 sidebar_position: 1
+keywords: ['wawov', 'solidity', '区块链', '智能合约', 'evm']
+description: '学习Solidity的第一步，从Hello World开始'
 ---
 
 
