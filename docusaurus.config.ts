@@ -149,6 +149,12 @@ const config: Config = {
         },
       }
     },
+    [
+      '@docusaurus/plugin-google-tag-manager',
+      {
+        containerId: 'GTM-N88LK9MV',
+      },
+    ],
   ],
 }
 
