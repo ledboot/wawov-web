@@ -65,15 +65,15 @@ const config: Config = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'robots', content: 'index, follow' },
     ],
-    // algolia: {
-    //   appId: '1CCGLI5COR',
-    //   apiKey: 'f47fda380029faa9451ba4dd591207e3',
-    //   indexName: 'wawov',
-    //   contextualSearch: true,
-    //   searchParameters: {},
-    //   searchPagePath: 'search',
-    //   insights: true,
-    // },
+    algolia: {
+      appId: '1CCGLI5COR',
+      apiKey: 'f47fda380029faa9451ba4dd591207e3',
+      indexName: 'wawov',
+      contextualSearch: true,
+      searchParameters: {},
+      searchPagePath: 'search',
+      insights: true,
+    },
     navbar: {
       title: 'wawov',
       logo: {
