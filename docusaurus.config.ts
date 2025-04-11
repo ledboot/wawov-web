@@ -64,7 +64,6 @@ const config: Config = {
       { name: 'description', content: 'Gwynn的知识库，分享技术，分享生活' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'robots', content: 'index, follow' },
-      { name: 'google-adsense-account', content: 'ca-pub-3198470578962995' },
     ],
     algolia: {
       appId: '1CCGLI5COR',
