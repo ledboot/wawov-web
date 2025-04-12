@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 @layer base {
   :root {
@@ -13,9 +16,9 @@
     --ifm-color-primary-lighter: #b0e6ff;
     --ifm-color-primary-lightest: #d5f1fd;
     --ifm-code-font-size: 95%;
-    --ifm-font-family-base: misans, ui-sans-serif, system-ui, -apple-system;
+    --ifm-font-family-base: 'Open Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
 
-    --ifm-heading-font-family: ui-sans-serif, system-ui, -apple-system;
+    --ifm-heading-font-family: 'Open Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
 
     --ifm-navbar-background-color: white;
     --ifm-navbar-shadow: 0 4px 28px rgb(0 0 0 / 10%);
