@@ -121,8 +121,60 @@ anvil --block-time 2 --gas-limit 30000000
 - 区块时间​​：2 秒/区块
 - 区块 Gas 限制​​：30000000
 
+## 6. 实战应用
 
-## 6. 知识图谱
+### QA: 如何解决本地开发测试时，账户没有USDC的问题？
+
+在本地先使用`anvil`启动一个本地的evm节点，然后使用`cast rpc`命令行工具来操作这个本地的evm节点。
+
+这里使用Base Sepolia测试网来启动一个本地的evm节点。
+
+```bash
+anvil --fork-url https://base-sepolia.gateway.tenderly.co
+```
+
+这样本地就启动了一个最新区块的base sepolia测试网的evm节点。
+
+然后使用`cast rpc`命令行工具来操作这个本地的evm节点。
+
+```bash
+unluckyUserUsdc=0xcF93D9de9965B960769aa9B28164D571cBbCE39C
+
+usdc=0x036CbD53842c5426634e7929541eC2318f3dCF7e
+
+toUser=0xa669a8b910cdee8d0eed2ffd066456a05e102297
+
+rpc=http://localhost:8545
+
+cast rpc -r $rpc anvil_impersonateAccount $unluckyUserUsdc
+
+cast call -r $rpc $usdc \
+  "balanceOf(address)(uint256)" \
+  $unluckyUserUsdc
+
+cast send -r $rpc $usdc \
+--from $unluckyUserUsdc \
+  "transfer(address,uint256)(bool)" \
+  $toUser \
+  1000000000000 \
+  --unlocked
+
+cast call -r $rpc $usdc \
+  "balanceOf(address)(uint256)" \
+  $toUser
+```
+
+:::tip 提示
+
+同理其他ERC20代币也可以使用这个方法来操作。
+
+:::
+
+
+
+
+
+## 7. 知识图谱
 
 ```mermaid
 graph TD  
