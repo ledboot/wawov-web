@@ -7,14 +7,15 @@ keywords: ['wawov', 'solidity', '区块链', '智能合约', 'evm']
 description: '学习Solidity的第一步，从Hello World开始'
 ---
 
+### 1. 什么是 Solidity？
 
-### 1. 什么是 Solidity？  
-Solidity 是一种**面向智能合约的高级编程语言**，专为以太坊虚拟机（EVM）设计。它支持静态类型、继承、库等特性，是开发去中心化应用（DApp）的核心工具。  
+Solidity 是一种**面向智能合约的高级编程语言**，专为以太坊虚拟机（EVM）设计。它支持静态类型、继承、库等特性，是开发去中心化应用（DApp）的核心工具。
 
 ---
 
-### 2. 合约结构解析  
-一个最简单的 Solidity 合约包含以下核心部分：  
+### 2. 合约结构解析
+
+一个最简单的 Solidity 合约包含以下核心部分：
 
 ```solidity
 // SPDX-License-Identifier: MIT  // 许可证声明（必填）
@@ -28,13 +29,13 @@ contract HelloWorld {           // 合约定义
 ### 代码解释：
 
 - **SPDX-License-Identifier**
-声明合约的开源许可证（如 MIT），避免法律风险。
+  声明合约的开源许可证（如 MIT），避免法律风险。
 - **pragma solidity**
-指定编译器版本（如 ^0.8.20 表示兼容 0.8.20 及以上版本）。
+  指定编译器版本（如 ^0.8.20 表示兼容 0.8.20 及以上版本）。
 - **contract 关键字**
-定义一个智能合约，类似于面向对象编程中的“类”。
-​状态变量 greeting
-存储合约数据的全局变量，public 修饰符会自动生成一个同名 getter 函数
+  定义一个智能合约，类似于面向对象编程中的“类”。
+  ​状态变量 greeting
+  存储合约数据的全局变量，public 修饰符会自动生成一个同名 getter 函数
 
 ### 3. 使用 Foundry 编译与部署
 
@@ -98,13 +99,13 @@ D --> F[可见性: public/private/internal]
 
 - **​数据类型**：包括布尔值（bool）、整数（uint/int）、地址（address）、字符串（string）等。
 - **​可见性修饰符**：
-  - public: 允许外部和内部调用 
+  - public: 允许外部和内部调用
   - private: 仅限合约内部访问
 
-
 ### 5. 扩展练习
+
 尝试修改 greeting 变量并重新部署，观察链上数据的变化。例如：
 
-``` solidity
+```solidity
 string public greeting = "Welcome to Web3!";
 ```

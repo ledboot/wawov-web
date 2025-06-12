@@ -26,7 +26,7 @@
     "importsNotUsedAsValues": "remove",
     "moduleResolution": "Bundler",
     "skipLibCheck": false,
-    "jsx": "react-jsx"  // 确保这一行存在
+    "jsx": "react-jsx" // 确保这一行存在
   },
   "exclude": [".docusaurus", "build", "node_modules"]
 }

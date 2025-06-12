@@ -3,24 +3,25 @@ slug: '/docs/lean/solidity/chapter1/0x02-variable-and-data-type'
 title: '0x02: 变量与数据类型'
 hide_title: true
 sidebar_position: 2
-keywords: ['wawov', 'solidity', '区块链', '智能合约', 'evm', '变量', '数据类型', '引用类型', '存储位置']
+keywords:
+  ['wawov', 'solidity', '区块链', '智能合约', 'evm', '变量', '数据类型', '引用类型', '存储位置']
 description: '变量与数据类型是Solidity编程的基础,本文将详细介绍Solidity中的变量声明、数据类型分类、数据类型转换以及引用类型。'
 ---
 
-
 ## 1.数据类型分类
 
-Solidity中的数据类型分为**值类型**​（直接存储值）和**引用类型**​（存储数据地址）：  
-- **值类型**:  
+Solidity中的数据类型分为**值类型**​（直接存储值）和**引用类型**​（存储数据地址）：
+
+- **值类型**:
   - **整型**:
     - `uint`/`int`：无符号/有符号整数 (默认 `uint256`/`int256`，支持 `uint8`-`uint256`、`int8`-`int256`)
     - 溢出保护: Solidity 0.8+ 默认开启溢出检查，需使用 `unchecked` 块关闭
-  - **布尔型**: `bool` 
+  - **布尔型**: `bool`
   - **地址**: `address`(20 字节以太坊地址，支持 `.balance` 和 `.transfer()` 方法)
-  - **字节数组**: `bytes1`-`bytes32`(固定长度)  
-- **引用类型**:  
-  - **动态数组**: `uint[]`、`string`  
-  - **结构体**: `struct`(自定义复合类型)  
+  - **字节数组**: `bytes1`-`bytes32`(固定长度)
+- **引用类型**:
+  - **动态数组**: `uint[]`、`string`
+  - **结构体**: `struct`(自定义复合类型)
   - **映射**: `mapping(keyType => valueType)`(哈希表存储)
   - **枚举**: `enum`(有限常量集合)
 
@@ -31,7 +32,6 @@ A --> C[引用类型]
 B --> D(int/uint/bool/address/bytes)
 C --> E(array/mapping/struct/enum)
 ```
-
 
 ## 2.变量声明与作用域
 
@@ -49,10 +49,12 @@ C --> E(array/mapping/struct/enum)
     uint localVar = 0; // 局部变量
   }
   ```
-- **常量与不可变量**: 
+
+- **常量与不可变量**:
+
   - **常量**: `constant` 或 `immutable` 声明，编译时计算，运行时不可变
   - **不可变量**: `constant` 声明，编译时计算，运行时不可变
-  
+
   ```solidity
   uint constant MAX_VALUE = 100; // 常量
   uint immutable MIN_VALUE = 0; // 不可变量
@@ -64,36 +66,39 @@ C --> E(array/mapping/struct/enum)
 - **显式转换**: 显式转换需要开发者明确指定转换的目标类型,使用语法类似于类型构造函数。
 
 ### **隐式转换规则**
+
 - 数值类型转换:
-   - 大范围类型可以隐式转换为小范围类型,但可能会导致数据截断。例如,uint256可以隐式转换为uint128,但如果值超出uint128的范围,会被截断。
-   - 小范围类型不能隐式转换为大范围类型,需要显式转换。
+  - 大范围类型可以隐式转换为小范围类型,但可能会导致数据截断。例如,uint256可以隐式转换为uint128,但如果值超出uint128的范围,会被截断。
+  - 小范围类型不能隐式转换为大范围类型,需要显式转换。
 - 整数类型转换:
-   - 无符号整数(uint)和有符号整数(int)之间不能进行隐式转换,必须使用显式转换。
+  - 无符号整数(uint)和有符号整数(int)之间不能进行隐式转换,必须使用显式转换。
 - 地址类型:
-   - address类型不能隐式转换为uint或其他类型,需显式转换。
+  - address类型不能隐式转换为uint或其他类型,需显式转换。
 - 枚举类型:
-   - 枚举类型不能隐式转换为整数类型,需显式转换。
+  - 枚举类型不能隐式转换为整数类型,需显式转换。
 
 ### **显式转换规则**
+
 - 无符号整数之间的转换：
 
-   ```solidity
-   uint8 a = 100;
-   uint16 b = uint16(a); // 显式转换
-   ```
+  ```solidity
+  uint8 a = 100;
+  uint16 b = uint16(a); // 显式转换
+  ```
+
 - 有符号整数之间的转换：
 
-   ```solidity
-   int16 a = -100;
-   int32 b = int32(a); // 显式转换
-   ```
+  ```solidity
+  int16 a = -100;
+  int32 b = int32(a); // 显式转换
+  ```
 
 - 无符号整数与有符号整数之间的转换：
 
-   ```solidity
-   int8 a = -10;
-   uint8 b = uint8(a); // 显式转换, 可能导致不期望的结果
-   ```
+  ```solidity
+  int8 a = -10;
+  uint8 b = uint8(a); // 显式转换, 可能导致不期望的结果
+  ```
 
 :::danger 注意
 
@@ -101,38 +106,40 @@ C --> E(array/mapping/struct/enum)
 
 :::
 
-
-
 - 地址类型与整数类型之间的转换：
 
-   ```solidity title='地址转无符号整数'
-   address a = 0x1234567890123456789012345678901234567890;
-   uint256 b = uint256(a); // 显式转换
-   ```
-   ```solidity title='无符号整数转地址'
-   uint256 a = 0x1234567890123456789012345678901234567890;
-   address b = address(a); // 显式转换
-   ```
+  ```solidity title='地址转无符号整数'
+  address a = 0x1234567890123456789012345678901234567890;
+  uint256 b = uint256(a); // 显式转换
+  ```
+
+  ```solidity title='无符号整数转地址'
+  uint256 a = 0x1234567890123456789012345678901234567890;
+  address b = address(a); // 显式转换
+  ```
+
 - 枚举类型与整数类型之间的转换：
 
-   ```solidity title='枚举转无符号整数'
-   enum Color { Red, Green, Blue } 
-   uint8 a = uint8(Color.Red); // 显式转换
-   ```
-   ```solidity title='无符号整数转枚举'
-   uint8 a = 0;
-   Color b = Color(a); // 显式转换
-   ```
+  ```solidity title='枚举转无符号整数'
+  enum Color { Red, Green, Blue }
+  uint8 a = uint8(Color.Red); // 显式转换
+  ```
+
+  ```solidity title='无符号整数转枚举'
+  uint8 a = 0;
+  Color b = Color(a); // 显式转换
+  ```
+
 - 布尔类型与整数类型之间的转换：
-   ```solidity title='布尔转无符号整数'
-   bool a = true;
-   uint8 b = uint8(a); // 显式转换
-   ```
+  ```solidity title='布尔转无符号整数'
+  bool a = true;
+  uint8 b = uint8(a); // 显式转换
+  ```
 - 字节数组与整数类型之间的转换：
-   ```solidity
-   bytes32 a = keccak256("Hello, World!");
-   uint256 b = uint256(a); // 显式转换
-   ```
+  ```solidity
+  bytes32 a = keccak256("Hello, World!");
+  uint256 b = uint256(a); // 显式转换
+  ```
 
 ## 4.引用类型
 
@@ -143,7 +150,6 @@ C --> E(array/mapping/struct/enum)
 - 存储(Storage): 永久存储在区块链上的持久化存储,所有状态变量默认存储在此。
 - 内存(Memory): 短暂的内存存储,仅在函数执行期间存在。
 - Calldata: 特殊的只读存储位置,用于函数参数,尤其是用于外部调用。
-
 
 #### 存储(Storage)
 
@@ -175,8 +181,6 @@ contract MemoryExample {
     }
 }
 ```
-
-
 
 #### Calldata
 

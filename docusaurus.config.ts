@@ -28,7 +28,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'zh-Hans',
-    locales: ['zh-Hans'],
+    locales: ['zh-Hans']
   },
 
   presets: [
@@ -40,30 +40,33 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/ledboot/wawov-web/tree/main/',
+          editUrl: 'https://github.com/ledboot/wawov-web/tree/main/'
         },
         blog: {},
         theme: {
-          customCss: './src/css/custom.css',
-        },
-      } satisfies Preset.Options,
-    ],
+          customCss: './src/css/custom.css'
+        }
+      } satisfies Preset.Options
+    ]
   ],
   markdown: {
-    mermaid: true,
+    mermaid: true
   },
   themes: ['@docusaurus/theme-mermaid'],
 
   themeConfig: {
-    // Replace with your project's social card
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+      respectPrefersColorScheme: true
+    },
     image: 'img/docusaurus-social-card.jpg',
     metadata: [
       { name: 'author', content: 'Gwynn' },
       { name: 'keywords', content: 'wawov,个人网站, golang, blockchain, devops, 知识分享' },
       { name: 'description', content: 'Gwynn的知识库，分享技术，分享生活' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'robots', content: 'index, follow' },
+      { name: 'robots', content: 'index, follow' }
     ],
     algolia: {
       appId: '1CCGLI5COR',
@@ -72,13 +75,13 @@ const config: Config = {
       contextualSearch: true,
       searchParameters: {},
       searchPagePath: 'search',
-      insights: true,
+      insights: true
     },
     navbar: {
       title: 'wawov',
       logo: {
         alt: 'wawov',
-        src: 'img/logo.svg',
+        src: 'img/logo.svg'
       },
       items: [
         {
@@ -86,15 +89,15 @@ const config: Config = {
           sidebarId: 'mainSidebar',
           position: 'left',
           label: '从零开始',
-          to: '/docs/lean',
+          to: '/docs/lean'
         },
         { href: 'https://blog.wawov.com', label: '博客', position: 'left' },
         {
           href: 'https://github.com/ledboot',
           label: 'GitHub',
-          position: 'right',
-        },
-      ],
+          position: 'right'
+        }
+      ]
     },
     footer: {
       style: 'dark',
@@ -104,36 +107,35 @@ const config: Config = {
           items: [
             {
               label: 'lean',
-              to: '/docs/lean',
-            },
-          ],
+              to: '/docs/lean'
+            }
+          ]
         },
         {
           title: 'Community',
           items: [
             {
               label: 'X',
-              href: 'https://x.com/ledboot_',
-            },
-          ],
+              href: 'https://x.com/ledboot_'
+            }
+          ]
         },
         {
           title: 'More',
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/ledboot',
-            },
-          ],
-        },
+              href: 'https://github.com/ledboot'
+            }
+          ]
+        }
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} wawov.com | Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} wawov.com | Built with Docusaurus.`
     },
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
-      additionalLanguages: ['solidity', 'bash'],
-    },
+      additionalLanguages: ['solidity', 'bash']
+    }
   } satisfies Preset.ThemeConfig,
 
   // Add Tailwind CSS
@@ -146,16 +148,16 @@ const config: Config = {
           postcssOptions.plugins.push(require('tailwindcss'))
           postcssOptions.plugins.push(require('autoprefixer'))
           return postcssOptions
-        },
+        }
       }
     },
     [
       '@docusaurus/plugin-google-tag-manager',
       {
-        containerId: 'GTM-N88LK9MV',
-      },
-    ],
-  ],
+        containerId: 'GTM-N88LK9MV'
+      }
+    ]
+  ]
 }
 
 export default config

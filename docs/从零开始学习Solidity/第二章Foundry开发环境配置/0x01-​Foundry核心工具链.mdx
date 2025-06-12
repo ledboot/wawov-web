@@ -3,7 +3,8 @@ slug: '/docs/lean/solidity/chapter2/0x01-foundry-core-tools'
 title: '0x01：Foundry核心工具链'
 sidebar_position: 1
 hide_title: true
-keywords: ['Foundry','开发环境配置', '核心工具链','区块链', '智能合约', 'evm', 'forge', 'anvil', 'cast']
+keywords:
+  ['Foundry', '开发环境配置', '核心工具链', '区块链', '智能合约', 'evm', 'forge', 'anvil', 'cast']
 description: 'Foundry 是一个用于开发和部署智能合约的工具链，包括 Forge、Anvil 和 Cast 等工具。本文介绍了 Foundry 的核心工具链，包括 Forge、Anvil 和 Cast 等工具。'
 ---
 
@@ -17,7 +18,6 @@ Foundry是以太坊智能合约开发领域的革命性工具集，其核心组�
 | ​**​Cast​**​   | 区块链交互瑞士军刀    | 多链兼容与灵活查询能力 |
 | ​**​Anvil​**​  | 本地以太坊节点模拟器  | 秒级状态重置与调试支持 |
 | ​**​Chisel​**​ | Solidity 实时交互环境 | 即时验证与原型测试能力 |
-
 
 > ​**​开发效率革命​**​：Foundry 采用 Rust 语言实现，编译速度比传统框架快 3-5 倍
 
@@ -62,11 +62,11 @@ forge build --sizes  # 显示编译后合约体积
 import {Test} from "forge-std/Test.sol";
 
 contract MyTest is Test {
-    function test_Increment() public {  
+    function test_Increment() public {
         vm.prank(alice);  // 模拟用户操作
-        counter.increment();  
-        assertEq(counter.get(), 1);  
-    }  
+        counter.increment();
+        assertEq(counter.get(), 1);
+    }
 }
 ```
 
@@ -79,11 +79,11 @@ contract MyTest is Test {
 ### 2.4 部署与验证流程
 
 ```bash
-# 一键部署到以太坊主网  
-forge script script/Deploy.s.sol --rpc-url mainnet --broadcast  
+# 一键部署到以太坊主网
+forge script script/Deploy.s.sol --rpc-url mainnet --broadcast
 
-# 合约验证（需配置 Etherscan API）  
-forge verify-contract 0x... src/MyContract.sol --chain-id 1  
+# 合约验证（需配置 Etherscan API）
+forge verify-contract 0x... src/MyContract.sol --chain-id 1
 ```
 
 ## 3. Cast 区块链交互工具
@@ -100,14 +100,13 @@ Cast 是一个功能强大的区块链交互工具，支持多种区块链网络
 ### 3.2 高级交互模式
 
 ```bash
-# 发送带 ETH 的交易  
-cast send 0x... "deposit()" --value 1ether --private-key $PK  
+# 发送带 ETH 的交易
+cast send 0x... "deposit()" --value 1ether --private-key $PK
 
-# 批量查询代币余额  
-cast interface IERC20 > IERC20.sol  # 自动生成接口  
-cast balance-of --token 0x... holders.txt  
+# 批量查询代币余额
+cast interface IERC20 > IERC20.sol  # 自动生成接口
+cast balance-of --token 0x... holders.txt
 ```
-
 
 ## 4. Anvil 本地节点模拟器
 
@@ -170,19 +169,15 @@ cast call -r $rpc $usdc \
 
 :::
 
-
-
-
-
 ## 7. 知识图谱
 
 ```mermaid
-graph TD  
-A[Forge] --> B[项目脚手架]  
-A --> C[测试框架]  
-A --> D[部署引擎]  
-E[Cast] --> F[链上查询]  
-E --> G[交易构造]  
-H[Anvil] --> I[本地节点]  
-H --> J[状态模拟]  
+graph TD
+A[Forge] --> B[项目脚手架]
+A --> C[测试框架]
+A --> D[部署引擎]
+E[Cast] --> F[链上查询]
+E --> G[交易构造]
+H[Anvil] --> I[本地节点]
+H --> J[状态模拟]
 ```
