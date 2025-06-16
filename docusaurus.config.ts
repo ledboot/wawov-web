@@ -30,6 +30,10 @@ const config: Config = {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans']
   },
+  future: {
+    experimental_faster: true,
+    v4: true
+  },
 
   presets: [
     [
@@ -42,7 +46,7 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/ledboot/wawov-web/tree/main/'
         },
-        blog: {},
+        blog: false,
         theme: {
           customCss: './src/css/custom.css'
         }
@@ -81,21 +85,26 @@ const config: Config = {
       title: 'wawov',
       logo: {
         alt: 'wawov',
-        src: 'img/logo.svg'
+        src: 'img/logo.svg',
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'mainSidebar',
           position: 'left',
           label: '从零开始',
-          to: '/docs/lean'
+          type: 'dropdown',
+          items:[
+            {
+              type: 'doc',
+              docId: 'solidity/index',
+              label: 'Solidity',
+            }
+          ]
         },
         { href: 'https://blog.wawov.com', label: '博客', position: 'left' },
         {
           href: 'https://github.com/ledboot',
           label: 'GitHub',
-          position: 'right'
+          position: 'right',
         }
       ]
     },
@@ -106,8 +115,9 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'lean',
-              to: '/docs/lean'
+              type: 'doc',
+              docId: 'solidity/index',
+              label: '从零开始学Solidity',
             }
           ]
         },

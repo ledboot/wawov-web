@@ -4,14 +4,14 @@ import ts from 'typescript-eslint'
 
 export default [
   {
-    ignores: ['.docusaurus', 'build']
+    ignores: ['.docusaurus', 'build'],
   },
-  stylistic.configs['recommended-flat'],
   ...ts.configs.recommended,
   {
     files: ['**/*.ts', '**/*.tsx'],
     plugins: {
-      react: react
+      '@stylistic': stylistic,
+      react: react,
     },
     rules: {
       ...react.configs['jsx-runtime'].rules,
@@ -19,7 +19,8 @@ export default [
       '@typescript-eslint/no-unused-vars': 'off',
       '@typescript-eslint/no-require-imports': 'off',
       '@typescript-eslint/no-empty-object-type': 'off',
-      '@typescript-eslint/no-explicit-any': 'off'
-    }
-  }
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@stylistic/comma-dangle': 'off'
+    },
+  },
 ]
