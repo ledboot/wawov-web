@@ -95,7 +95,7 @@ const config: Config = {
           items:[
             {
               type: 'doc',
-              docId: 'solidity/index',
+              docId: 'solidity/solidity-intro',
               label: 'Solidity',
             }
           ]
@@ -115,9 +115,8 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              type: 'doc',
-              docId: 'solidity/index',
               label: '从零开始学Solidity',
+              to: '/solidity'
             }
           ]
         },
