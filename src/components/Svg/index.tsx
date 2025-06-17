@@ -12,7 +12,15 @@ export interface SvgIconProps extends ComponentProps<'svg'> {
 }
 
 export default function Svg(props: SvgIconProps): JSX.Element {
-  const { svgClass, colorAttr, children, color = 'inherit', size = 'medium', viewBox = '0 0 24 24', ...rest } = props
+  const {
+    svgClass,
+    colorAttr,
+    children,
+    color = 'inherit',
+    size = 'medium',
+    viewBox = '0 0 24 24',
+    ...rest
+  } = props
 
   return (
     <svg
