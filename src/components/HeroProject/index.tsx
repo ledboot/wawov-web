@@ -34,13 +34,13 @@ const projects = [
     ]
   },
   {
-    title: 'SmartIMG',
+    title: 'TUZIYO',
     description:
-      '使用大模型轻松移除水印,AI算法优化,几秒钟内完成水印移除,完全客户端处理,保护隐私安全',
+      '基于本地AI驱动,集水印移除、尺寸调整、裁剪与转换于一体的图片处理工具',
     tech: ['NextJS', 'AI', 'TypeScript', 'Tailwind CSS', 'ShadcnUI'],
     github: '',
-    demo: 'https://smartimg.wawov.com/',
-    image: '/img/smartimg.png',
+    demo: 'https://tuziyo.com/',
+    image: '/img/tuziyo.png',
     features: ['AI算法优化', '几秒钟内完成水印移除', '完全客户端处理', '保护隐私安全']
   },
   {
