@@ -46,7 +46,11 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/ledboot/wawov-web/tree/main/'
         },
-        blog: false,
+        blog: {
+          routeBasePath: '/blog',
+          blogSidebarCount: 'ALL',
+          blogSidebarTitle: '全部文章',
+        },
         theme: {
           customCss: './src/css/custom.css'
         }
@@ -87,7 +91,7 @@ const config: Config = {
         alt: 'wawov',
         src: 'img/logo.svg',
       },
-      items: [
+items: [
         {
           position: 'left',
           label: '从零开始',
@@ -100,12 +104,8 @@ const config: Config = {
             }
           ]
         },
-        { href: 'https://blog.wawov.com', label: '博客', position: 'left' },
-        {
-          href: 'https://github.com/ledboot',
-          label: 'GitHub',
-          position: 'right',
-        }
+        { to: '/blog', label: '博客', position: 'left' },
+        // { to: '/about', label: '关于我', position: 'left' }
       ]
     },
     footer: {
