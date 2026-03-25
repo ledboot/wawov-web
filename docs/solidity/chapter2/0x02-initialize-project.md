@@ -69,7 +69,8 @@ forge-std/=lib/forge-std/src/
 
 ```bash
 [profile.default]
-solc = "0.8.27"
+solc_version = "0.8.34"
+evm_version = "prague"
 optimizer = true
 optimizer_runs = 100
 
@@ -87,6 +88,12 @@ tab_width = 4
 quote_style = "double"
 number_underscore = "thousands"
 ```
+
+:::tip 版本说明
+
+建议固定编译器版本，避免 CI 或协作环境出现“同一代码不同字节码”的情况。根据 Solidity 官方发布，`0.8.30` 默认 EVM 目标已切换到 `prague`，教程后续章节也以此为基线。
+
+:::
 
 ### 3.4 测试环境配置
 
