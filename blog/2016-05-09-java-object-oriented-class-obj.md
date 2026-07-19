@@ -1,7 +1,8 @@
 ---
-id: java-object-oriented-class-obj
+slug: /2016/05/09/java-object-oriented-class-obj
 title: java 面向对象——类与对象的概念和使用
 date: 2016-05-09
+authors: [gwynn]
 tags: [java, java基础]
 ---
 
@@ -31,7 +32,7 @@ public static int add(int num){
 }
 ```
 
-<!-- more -->
+<!-- truncate -->
 
 <!-- ![类与对象](/assets/images/java_fondation/1.png) -->
 
@@ -73,5 +74,3 @@ Person persion = new Person();
 - 构造方法没有返回值
 - 每个类实例化之后都会调用构造方法，如果没有构造方法，程序在编译的时候会创建一个无参的构造方法
 - 构造方法可以重载
-
-

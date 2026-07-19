@@ -1,216 +1,114 @@
-import { motion } from 'motion/react'
-import { FaGithub, FaTwitter, FaMapMarkerAlt, FaCalendarAlt } from 'react-icons/fa'
-import { SiGo, SiReact, SiDocker, SiKubernetes, SiMysql } from 'react-icons/si'
-import { RiNextjsFill } from 'react-icons/ri'
-import { DiRedis } from 'react-icons/di'
-import { Badge } from '../components/ui/badge'
-import { Card, CardContent } from '../components/ui/card'
+import Head from '@docusaurus/Head'
+import Link from '@docusaurus/Link'
 import Layout from '@theme/Layout'
+import { ArrowUpRight, CheckCircle2, Github, MessageCircle, PencilLine } from 'lucide-react'
+import styles from './trust.module.css'
 
-const skills = [
-  { name: 'Go', icon: <SiGo className='h-5 w-5' />, color: 'border-cyan-500/30 bg-cyan-500/10' },
-  { name: 'React', icon: <SiReact className='h-5 w-5' />, color: 'border-blue-500/30 bg-blue-500/10' },
-  { name: 'Next.js', icon: <RiNextjsFill className='h-5 w-5' />, color: 'border-gray-500/30 bg-gray-500/10' },
-  { name: 'MySQL', icon: <SiMysql className='h-5 w-5' />, color: 'border-orange-500/30 bg-orange-500/10' },
-  { name: 'Redis', icon: <DiRedis className='h-5 w-5' />, color: 'border-red-500/30 bg-red-500/10' },
-  { name: 'Docker', icon: <SiDocker className='h-5 w-5' />, color: 'border-blue-600/30 bg-blue-600/10' },
-  { name: 'Kubernetes', icon: <SiKubernetes className='h-5 w-5' />, color: 'border-purple-500/30 bg-purple-500/10' }
+const principles = [
+  '优先记录亲自构建、部署或排查过的问题',
+  '给出版本、环境和限制，避免把局部经验写成普遍结论',
+  '引用原始文档，并清楚区分事实、推断和个人选择',
+  '发现错误后修订内容，让文章持续对读者负责'
 ]
 
-const timeline = [
-  {
-    year: '2024',
-    title: '独立开发者',
-    description: '专注于 Web3 基础设施开发'
-  },
-  {
-    year: '2022',
-    title: '高级工程师',
-    description: '负责区块链核心系统架构设计'
-  },
-  {
-    year: '2020',
-    title: '后端开发',
-    description: '参与多个大规模分布式系统建设'
-  }
-]
-
-export default function About() {
+export default function AboutPage() {
   return (
-    <Layout>
-      <main className='min-h-screen bg-gradient-to-br from-background via-background to-muted/20 py-20'>
-        <div className='container mx-auto max-w-5xl px-4'>
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className='mb-16 text-center'
-          >
-            <h1 className='mb-4 text-4xl font-bold md:text-5xl'>关于我</h1>
-            <p className='text-lg text-muted-foreground'>
-              热爱技术，专注区块链与基础设施
+    <Layout title='关于作者' description='了解 wawov 的作者、内容方向与编辑原则。'>
+      <Head>
+        <link rel='canonical' href='https://wawov.com/about' />
+      </Head>
+      <main className={styles.page}>
+        <header className={styles.header}>
+          <div>
+            <p className={styles.kicker}>ABOUT / 关于本站</p>
+            <h1>写给同样在构建真实产品的人</h1>
+          </div>
+          <p className={styles.summary}>
+            wawov 是 Gwynn 的个人工程手记，聚焦 Solidity、智能合约安全、后端基础设施与独立产品开发。
+          </p>
+        </header>
+
+        <section className={styles.profile} aria-labelledby='author-title'>
+          <img
+            src='/img/avatar.png'
+            alt='Gwynn 的头像'
+            width='320'
+            height='320'
+            loading='eager'
+          />
+          <div>
+            <p className={styles.sectionLabel}>作者</p>
+            <h2 id='author-title'>你好，我是 Gwynn</h2>
+            <p>
+              我是一名独立开发者，有超过 10 年的软件开发经验。长期关注后端系统、区块链基础设施与产品工程，也在持续完成从想法、开发、部署到商业化的独立产品实践。
             </p>
-          </motion.div>
-
-          {/* Profile Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            <Card className='mb-12 overflow-hidden border-2 border-border'>
-              <CardContent className='p-0'>
-                <div className='grid gap-0 md:grid-cols-5'>
-                  {/* Avatar Section */}
-                  <div className='flex items-center justify-center bg-gradient-to-br from-primary/20 via-blue-500/10 to-purple-600/10 p-8 md:col-span-2 md:p-12'>
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.4, duration: 0.6 }}
-                      className='text-center'
-                    >
-                      <div className='relative mx-auto mb-4 h-40 w-40'>
-                        <div className='absolute inset-0 rounded-full bg-gradient-to-br from-primary via-blue-500 to-purple-600 p-1'>
-                          <div className='flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-background'>
-                            <img
-                              src='/img/avatar.png'
-                              alt='avatar'
-                              className='h-full w-full rounded-full object-cover'
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <h2 className='text-2xl font-bold'>Gwynn</h2>
-                      <p className='text-muted-foreground'>独立开发者</p>
-                    </motion.div>
-                  </div>
-
-                  {/* Info Section */}
-                  <div className='p-8 md:col-span-3 md:p-12'>
-                    <motion.div
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.5, duration: 0.6 }}
-                      className='space-y-6'
-                    >
-                      <div>
-                        <h3 className='mb-3 text-xl font-semibold'>你好，我是 Gwynn</h3>
-                        <p className='text-muted-foreground leading-relaxed'>
-                          一名热爱技术的独立开发者，专注于区块链基础设施、高性能后端系统开发。致力于构建安全、高效、可扩展的分布式系统。
-                        </p>
-                      </div>
-
-                      <div className='space-y-3'>
-                        <div className='flex items-center gap-3 text-muted-foreground'>
-                          <FaMapMarkerAlt className='text-primary' />
-                          <span>中国</span>
-                        </div>
-                        <div className='flex items-center gap-3 text-muted-foreground'>
-                          <FaCalendarAlt className='text-primary' />
-                          <span>10+ 年开发经验</span>
-                        </div>
-                      </div>
-
-                      {/* Social Links */}
-                      <div className='flex gap-4'>
-                        <motion.a
-                          whileHover={{ scale: 1.1 }}
-                          href='https://github.com/ledboot'
-                          target='_blank'
-                          rel='noopener noreferrer'
-                          className='flex h-10 w-10 items-center justify-center rounded-lg bg-muted hover:bg-muted/80'
-                        >
-                          <FaGithub className='h-5 w-5' />
-                        </motion.a>
-                        <motion.a
-                          whileHover={{ scale: 1.1 }}
-                          href='https://x.com/ledboot_'
-                          target='_blank'
-                          rel='noopener noreferrer'
-                          className='flex h-10 w-10 items-center justify-center rounded-lg bg-muted hover:bg-muted/80'
-                        >
-                          <FaTwitter className='h-5 w-5' />
-                        </motion.a>
-                      </div>
-                    </motion.div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* Skills */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className='mb-12'
-          >
-            <h2 className='mb-6 text-2xl font-bold'>技术栈</h2>
-            <div className='flex flex-wrap gap-3'>
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={skill.name}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5 + index * 0.1, duration: 0.4 }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <Badge
-                    className={`${skill.color} border-2 px-4 py-2 text-sm`}
-                  >
-                    {skill.icon}
-                    <span className='ml-2'>{skill.name}</span>
-                  </Badge>
-                </motion.div>
-              ))}
+            <p>
+              写作对我来说不是整理百科，而是复盘工程判断：问题为什么发生、试过哪些方案、依据是什么，以及最终结果能否被别人复现。
+            </p>
+            <div className={styles.profileLinks}>
+              <a href='https://github.com/ledboot' target='_blank' rel='noopener noreferrer'>
+                <Github aria-hidden='true' size={18} /> GitHub
+                <ArrowUpRight aria-hidden='true' size={15} />
+              </a>
+              <a href='https://x.com/ledboot_' target='_blank' rel='noopener noreferrer'>
+                <MessageCircle aria-hidden='true' size={18} /> X
+                <ArrowUpRight aria-hidden='true' size={15} />
+              </a>
             </div>
-          </motion.div>
+          </div>
+        </section>
 
-          {/* Timeline */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-          >
-            <h2 className='mb-8 text-2xl font-bold'>经历</h2>
-            <div className='relative'>
-              {/* Vertical line */}
-              <div className='absolute left-8 top-0 h-full w-0.5 bg-gradient-to-b from-primary via-purple-500 to-purple-600' />
-              
-              <div className='space-y-8'>
-                {timeline.map((item, index) => (
-                  <motion.div
-                    key={item.year}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.7 + index * 0.2, duration: 0.5 }}
-                    className='relative flex items-start gap-6'
-                  >
-                    {/* Dot */}
-                    <div className='relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-purple-600 shadow-lg shadow-primary/25'>
-                      <span className='text-sm font-bold text-white'>{item.year.slice(-2)}</span>
-                    </div>
+        <section className={styles.twoColumn}>
+          <div>
+            <p className={styles.sectionLabel}>内容范围</p>
+            <h2>这里主要写什么</h2>
+          </div>
+          <div className={styles.topicList}>
+            <article>
+              <span>01</span>
+              <h3>Solidity 与合约安全</h3>
+              <p>从语言基础、Foundry 工具链到攻击复现、审计和生产发布。</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>后端与基础设施</h3>
+              <p>围绕日志、容器、云服务和可维护系统的真实配置与排查记录。</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>独立开发实践</h3>
+              <p>一个人完成产品、支付、部署和持续迭代时做出的选择与复盘。</p>
+            </article>
+          </div>
+        </section>
 
-                    {/* Content */}
-                    <Card className='flex-1 border-2 border-border bg-card/80 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10'>
-                      <CardContent className='p-5'>
-                        <div className='flex items-center justify-between'>
-                          <h3 className='text-lg font-semibold'>{item.title}</h3>
-                          <span className='rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary'>
-                            {item.year}
-                          </span>
-                        </div>
-                        <p className='mt-2 text-sm text-muted-foreground'>{item.description}</p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
+        <section className={styles.policy} aria-labelledby='policy-title'>
+          <div>
+            <PencilLine aria-hidden='true' size={28} />
+            <p className={styles.sectionLabel}>编辑原则</p>
+            <h2 id='policy-title'>内容如何被写出来</h2>
+          </div>
+          <ul>
+            {principles.map((principle) => (
+              <li key={principle}>
+                <CheckCircle2 aria-hidden='true' size={19} />
+                <span>{principle}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className={styles.cta}>
+          <div>
+            <p className={styles.sectionLabel}>从这里开始</p>
+            <h2>选择一条你正在走的路</h2>
+          </div>
+          <div>
+            <Link to='/solidity/'>学习 Solidity</Link>
+            <Link to='/blog/'>阅读工程手记</Link>
+            <Link to='/contact'>反馈问题</Link>
+          </div>
+        </section>
       </main>
     </Layout>
   )

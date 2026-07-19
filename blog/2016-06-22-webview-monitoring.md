@@ -1,14 +1,15 @@
 ---
-id: webview-monitoring
+slug: /2016/06/22/webview-monitoring
 title: Android webview交互性能监测指标获取方法
 date: 2016-06-22
+authors: [gwynn]
 tags: [Webview]
 ---
 
 
 业界衡量移动web app交互性能的优劣主要是通过监测webview渲染页面时白屏时间，DOM树构建时间，整页时间和首屏时间这三个指标来完成的，那么这四个指标分别的意义是什么呢？我们从w3c提供的navigation Timing中看到交互性能指的是Processing和onLoad这两部分的时间。
 
-<!-- more -->
+<!-- truncate -->
 
 ![timing-overview.png](https://cdn.wawov.com/gh/ledboot/blog-asset//img/2024/202409101704925.png)
 
@@ -185,4 +186,3 @@ public boolean onJsPrompt(WebView view, String url, String message, String defau
 	return true;
 }
 ```
-

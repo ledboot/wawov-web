@@ -25,7 +25,7 @@
     "noUnusedParameters": false,
     "importsNotUsedAsValues": "remove",
     "moduleResolution": "Bundler",
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "jsx": "react-jsx" // 确保这一行存在
   },
   "exclude": [".docusaurus", "build", "node_modules"]

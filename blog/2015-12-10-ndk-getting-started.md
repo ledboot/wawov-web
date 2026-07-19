@@ -1,7 +1,8 @@
 ---
-id: ndk-getting-started
+slug: /2015/12/10/ndk-getting-started
 title: NDK入门
 date: 2015-12-10
+authors: [gwynn]
 tags: [Android, NDK]
 ---
 
@@ -40,7 +41,7 @@ static {
 ```
 jni会尝试去寻找JNI_OnLoad方法，所以一些初始化的东西就可以在这里面实现。
 
-<!--more-->
+<!-- truncate -->
 
 #### **方法注入**
 >本人表示网上一堆乱七八糟的方式会让刚入门的同学遇到无限的坑，被坑过的我，现在整理了一下，顺便梳理过程

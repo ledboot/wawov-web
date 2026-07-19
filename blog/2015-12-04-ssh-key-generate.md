@@ -1,12 +1,16 @@
 ---
-id: ssh-key-generate
+slug: /2015/12/04/ssh-key-generate
 title: ssh key生成
 date: 2015-12-04
+authors: [gwynn]
 tags: [ssh]
 ---
 
 ### ssh key生成
 key会生成在.ssh文件夹下面
+
+<!-- truncate -->
+
 ```
 ssh-keygen -t rsa  -C "your_email@example.com"
 ```

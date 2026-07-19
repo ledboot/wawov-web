@@ -1,13 +1,14 @@
 ---
-id: handle-cue-file
+slug: /2025/12/12/handle-cue-file
 title: 如何处理音乐CUE文件
 date: 2025-12-12
+authors: [gwynn]
 tags: [NAS, CUE文件]
 ---
 
 最近在倒腾新买的nas，在音乐刮削用到这个开源项目[music-tag-web](https://github.com/xhongc/music-tag-web),但是下载好的音乐文件就是无法进行音轨拆分。
 
-<!--more-->
+<!-- truncate -->
 
 无论是把项目删除、数据清除，反复重新安装[music-tag-web](https://github.com/xhongc/music-tag-web)都还是会保这样的错误。
 

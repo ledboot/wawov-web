@@ -1,13 +1,14 @@
 ---
-id: understanding-hd-wallets
+slug: /2025/03/10/understanding-hd-wallets
 title: 了解HD Wallet
 date: 2025-03-10
+authors: [gwynn]
 tags: [BIP32, BIP44, BIP39, HD Wallet]
 ---
 
 数字钱包是进入加密货币世界的核心工具，本质是一套精密的密钥管理系统，而非简单的"存储容器"。
 
-<!--more-->
+<!-- truncate -->
 
 ## 数字钱包
 数字钱包是一种用于管理加密货币的工具，核心功能包括生成密钥对、存储资产、签署交易以及与区块链网络交互。其本质是密钥管理系统：
@@ -130,4 +131,3 @@ flowchart LR
 为此，我开发了一个简单的网页应用，用于生成和展示HD Wallet的密钥。
 
 可以访问[https://cryptohub.lol/tools/hd-wallet](https://cryptohub.lol/tools/hd-wallet)进行体验。
-

@@ -1,6 +1,6 @@
 ---
 id: '0x01-frist-contract'
-slug: './chapter1/0x01-frist-contract'
+slug: './0x01-frist-contract'
 title: '0x01：第一个智能合约——Hello World'
 hide_title: true
 sidebar_position: 1

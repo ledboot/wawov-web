@@ -1,13 +1,16 @@
 ---
-id: java-object-oriented-abstract-interface
+slug: /2016/05/09/java-object-oriented-abstract-interface
 title: java 面向对象——抽象类与接口
 date: 2016-05-09
+authors: [gwynn]
 tags: [java, java基础]
 ---
 
 #### 抽象类
 
 抽象类只是比普通类多了一些抽象方法而已，抽象方法没有方法体。
+
+<!-- truncate -->
 
 ```java
 abstract class Person{
@@ -47,4 +50,3 @@ interface Person{
 | 方法 | 可以有抽象方法也可以有普通方法 | 只能是抽象方法（jdk1.8后可以有default） |
 | 继承 | 只能单继承 | 可以多实现 |
 | 成员 | 可以有普通成员 | 只能是常量 |
-

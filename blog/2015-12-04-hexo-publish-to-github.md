@@ -1,7 +1,8 @@
 ---
-id: hexo-publish-to-github
+slug: /2015/12/04/hexo-publish-to-github
 title: hexo部署到github
 date: 2015-12-04
+authors: [gwynn]
 tags: [Hexo, Github]
 ---
 
@@ -24,7 +25,7 @@ hexo init <folder>
 cd <folder>
 npm install
 ```
-<!--more-->
+<!-- truncate -->
 
 ##### 启动Hexo
 

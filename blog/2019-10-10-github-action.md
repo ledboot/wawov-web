@@ -1,7 +1,8 @@
 ---
-id: github-action
+slug: /2019/10/10/github-action
 title: Bye Travis , Hello Github Action
 date: 2019-10-10
+authors: [gwynn]
 tags: [Github]
 ---
 
@@ -12,7 +13,7 @@ tags: [Github]
 2. hexo g
 3. 进入public目录push到对应的仓库
 
-<!-- more -->
+<!-- truncate -->
 
 创建一个Action，默认的会在当前仓库下`.github/workflows`目录下创建一个xxx.yml文件。这个Workflow的语法主干有几个元素`name`、`on`、`env`、`jobs`
 

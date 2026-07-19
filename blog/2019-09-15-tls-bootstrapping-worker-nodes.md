@@ -1,12 +1,17 @@
 ---
-id: tls-bootstrapping-worker-nodes
+slug: /2019/09/15/tls-bootstrapping-worker-nodes
 title: TLS Bootstrapping Worker Nodes
 date: 2019-09-15
+authors: [gwynn]
 tags: [CKA, Kubernetes]
 ---
 
 ## step 1
 在`kube-system`namespace下创建一个secret,名字格式:bootstrap-token-\<token\>
+
+本文记录 Kubernetes Worker 节点 TLS Bootstrap 的关键配置步骤。
+
+<!-- truncate -->
 
 ```
 cat > bootstrap-token-05832d.yaml << EOF

@@ -1,7 +1,8 @@
 ---
-id: grafana-loki
+slug: /2025/03/17/grafana-loki
 title: Loki-管理日志从未如此简单
 date: 2025-03-17
+authors: [gwynn]
 tags: [Docker, Grafana, Loki, Alloy]
 ---
 
@@ -10,7 +11,7 @@ tags: [Docker, Grafana, Loki, Alloy]
 如果使用Grafana Loki，可以非常方便地管理日志，并且可以非常方便地查询和分析日志。而且系统资源占用小，部署简单。
 
 
-<!--more-->
+<!-- truncate -->
 
 ## 什么是Loki
 

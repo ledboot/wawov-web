@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic'
 
 const config: Config = {
   title: 'wawov',
-  tagline: 'Dinosaurs are cool',
+  tagline: '把复杂系统，拆成可以验证的实践',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -31,7 +31,6 @@ const config: Config = {
     locales: ['zh-Hans']
   },
   future: {
-    experimental_faster: true,
     v4: true
   },
 
@@ -50,6 +49,19 @@ const config: Config = {
           routeBasePath: '/blog',
           blogSidebarCount: 'ALL',
           blogSidebarTitle: '全部文章',
+          postsPerPage: 8,
+          showReadingTime: true,
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: [
+            '/search',
+            '/blog/archive',
+            '/blog/page/**',
+            '/blog/tags',
+            '/blog/tags/**'
+          ]
         },
         theme: {
           customCss: './src/css/custom.css'
@@ -71,8 +83,12 @@ const config: Config = {
     image: 'img/docusaurus-social-card.jpg',
     metadata: [
       { name: 'author', content: 'Gwynn' },
-      { name: 'keywords', content: 'wawov,个人网站, golang, blockchain, devops, 知识分享' },
-      { name: 'description', content: 'Gwynn的知识库，分享技术，分享生活' },
+      { name: 'keywords', content: 'Solidity,智能合约安全,Foundry,后端开发,独立开发,wawov' },
+      {
+        name: 'description',
+        content: 'Gwynn 的工程手记：系统学习 Solidity、智能合约安全、后端基础设施与独立产品开发。'
+      },
+      { name: 'google-adsense-account', content: 'ca-pub-3198470578962995' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'robots', content: 'index, follow' }
     ],
@@ -91,55 +107,60 @@ const config: Config = {
         alt: 'wawov',
         src: 'img/logo.svg',
       },
-items: [
-        {
-          position: 'left',
-          label: '从零开始',
-          type: 'dropdown',
-          items:[
-            {
-              type: 'doc',
-              docId: 'solidity/solidity-intro',
-              label: 'Solidity',
-            }
-          ]
-        },
+      items: [
+        { to: '/solidity/', label: 'Solidity 教程', position: 'left' },
         { to: '/blog', label: '博客', position: 'left' },
-        // { to: '/about', label: '关于我', position: 'left' }
+        { to: '/about', label: '关于', position: 'left' }
       ]
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: '学习',
           items: [
             {
               label: '从零开始学Solidity',
               to: '/solidity'
+            },
+            {
+              label: '工程手记',
+              to: '/blog'
             }
           ]
         },
         {
-          title: 'Community',
+          title: '关于',
           items: [
             {
-              label: 'X',
-              href: 'https://x.com/ledboot_'
+              label: '关于作者',
+              to: '/about'
+            },
+            {
+              label: '联系与反馈',
+              to: '/contact'
+            },
+            {
+              label: '隐私政策',
+              to: '/privacy'
             }
           ]
         },
         {
-          title: 'More',
+          title: '关注',
           items: [
             {
               label: 'GitHub',
               href: 'https://github.com/ledboot'
+            },
+            {
+              label: 'X / Twitter',
+              href: 'https://x.com/ledboot_'
             }
           ]
         }
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} wawov.com | Built with Docusaurus.`
+      copyright: `Copyright © ${new Date().getFullYear()} Gwynn · wawov.com`
     },
     prism: {
       theme: prismThemes.github,
@@ -147,19 +168,7 @@ items: [
     }
   } satisfies Preset.ThemeConfig,
 
-  // Add Tailwind CSS
   plugins: [
-    async function tailwindcssPlugin() {
-      return {
-        name: 'docusaurus-tailwindcss',
-        configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require('tailwindcss'))
-          postcssOptions.plugins.push(require('autoprefixer'))
-          return postcssOptions
-        }
-      }
-    },
     [
       '@docusaurus/plugin-google-tag-manager',
       {
