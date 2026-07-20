@@ -1,7 +1,8 @@
 ---
-id: asm-bytecode-framework
+slug: /2016/06/22/asm-bytecode-framework
 title: ASM Bytecode Framework探索与使用
 date: 2016-06-22
+authors: [gwynn]
 tags: [java, ASM]
 ---
 
@@ -9,7 +10,7 @@ tags: [java, ASM]
 
 ASM是一款基于java字节码层面的代码分析和修改工具。无需提供源代码即可对应用嵌入所需debug代码，用于应用API性能分析。ASM可以直接产生二进制class文件，也可以在类被加入JVM之前动态修改类行为。
 
-<!-- more -->
+<!-- truncate -->
 
 ##### ASM库的结构
 
@@ -152,4 +153,3 @@ ClassReader类的accept方法中，有个int类型的flag参数有以下几种�
 
 
 另外，可以到github仓库查看本次的demo工程：[ASMTest](https://github.com/ledboot/ASMTest)
-

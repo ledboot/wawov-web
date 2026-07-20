@@ -1,13 +1,14 @@
 ---
-id: blog-asset-use-cloudflare
+slug: /2024/09/13/blog-asset-use-cloudflare
 title: 使用Cloudflare CDN加速博客资源
 date: 2024-09-13
+authors: [gwynn]
 tags: [Cloudflare, CDN]
 ---
 
 Cloudflare是一个广泛使用的CDN服务，它不仅可以加速博客资源，还能提供额外的安全保护。本文将介绍如何使用Cloudflare CDN加速你的博客及其好处。
 
-<!--more-->
+<!-- truncate -->
 
 ## 什么是CDN？
 内容分发网络（CDN）是一组分布在多个地理位置的服务器，通过将内容缓存到离用户更近的位置，来提高网站的加载速度。CDN通过减少用户与服务器之间的距离，确保用户能够快速加载网页和资源。

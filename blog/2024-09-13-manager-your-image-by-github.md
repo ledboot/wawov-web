@@ -1,14 +1,15 @@
 ---
-id: manager-your-image-by-github
+slug: /2024/09/13/manager-your-image-by-github
 title: 使用GitHub作为博客的图床
 date: 2024-09-13
+authors: [gwynn]
 tags: [GitHub]
 draft: true
 ---
 
 如果你还在为博客的图片存储和管理而烦恼，不妨试试使用GitHub作为博客的图床。本文将详细介绍如何利用GitHub作为博客的图床，实现免费、可靠的图片存储和管理方案。
 
-<!-- more -->
+<!-- truncate -->
 
 
 ## 为什么使用GitHub作为图床？

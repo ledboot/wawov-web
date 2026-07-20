@@ -1,13 +1,14 @@
 ---
-id: protocol-buffer-use
+slug: /2016/12/08/protocol-buffer-use
 title: protocol buffer 使用
 date: 2016-12-08
+authors: [gwynn]
 tags: [protocol buffer]
 ---
 
 ## 安装
 
-mac上使用homebrew安装，<pre>brew install protobuf</pre>
+macOS 上可以使用 Homebrew 安装：`brew install protobuf`。
 
 
 其他os，可以到[官网](http://code.google.com/p/protobuf/downloads/list)下载。
@@ -70,7 +71,7 @@ message DeviceInfo{
 }
 
 ```
-<!-- more -->
+<!-- truncate -->
 
 
 message定义了11个field，每个field都有名称与类型组成。
@@ -263,7 +264,7 @@ package是被忽略的，因为Python的modules是通过它们的文件位置来
 
 如果不生成java代码，此选项没有任何影响。
 
-例子：<pre>option java_package = "com.example.foo";</pre>
+例子：`option java_package = "com.example.foo";`
 
 
 
@@ -273,7 +274,7 @@ package是被忽略的，因为Python的modules是通过它们的文件位置来
 
 如果不生成java代码，此选项没有影响。
 
-例子：<pre>option java_outer_classname = "Ponycopter";</pre>
+例子：`option java_outer_classname = "Ponycopter";`
 
 
 
@@ -287,7 +288,7 @@ package是被忽略的，因为Python的modules是通过它们的文件位置来
 
     1. LITE_RUNTIME: protocol编译器会生成仅仅依赖 lite 运行库（libprotobuf-lite代替libprotobuf）。lite运行时比全量库小很多，省略了某种特性（如： descriptors and reflection）这个选项对于运行在像移动手机这种有约束平台上的应用更有效。 编译器仍然会对所有方法生成非常快的代码实现，就像SPEED模式一样。protocol编译器会用各种语言来实现MessageList接口，但是这个接口仅仅提供了其它模式实现的Message接口的一部分方法子集。
 
-例子：<pre>option optimize_for = CODE_SIZE;</pre>
+例子：`option optimize_for = CODE_SIZE;`
 
 
 

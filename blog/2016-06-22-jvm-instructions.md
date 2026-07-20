@@ -1,7 +1,8 @@
 ---
-id: jvm-instructions
+slug: /2016/06/22/jvm-instructions
 title: JVM指令
 date: 2016-06-22
+authors: [gwynn]
 tags: [JVM]
 ---
 
@@ -22,7 +23,7 @@ tags: [JVM]
 - `iload_1` 将局部变量数组里面下标为1的int类型的数据压入到操作数栈；
 - `iaload`   将int型数组的指定索引的值压入到操作数栈；
 
-<!-- more -->
+<!-- truncate -->
 
 ##### 凡是带有store指令的表示将操作数栈顶的某类型的值存入指定的局部变量中。
 - `istore`  表示将栈顶int类型的数据存入到指定的局部变量中；

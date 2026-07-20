@@ -1,7 +1,8 @@
 ---
-id: android-manifest-analysis
+slug: /2015/12/14/android-manifest-analysis
 title: AndroidManifest解析
 date: 2015-12-14
+authors: [gwynn]
 tags: [Android]
 ---
 
@@ -31,7 +32,7 @@ AndroidManifest.xml 是每个android程序中必须的文件。它位于整个�
 	- auto，系统将会根据存储空间自己去适应
 	- internalOnly，是指必须安装到内部才能运行
 	
-<!--more-->
+<!-- truncate -->
 
 ##### (< Application \>)属性
 

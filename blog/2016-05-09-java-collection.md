@@ -1,7 +1,8 @@
 ---
-id: java-collection
+slug: /2016/05/09/java-collection
 title: java集合
 date: 2016-05-09
+authors: [gwynn]
 tags: [java, java基础]
 ---
 
@@ -15,7 +16,7 @@ tags: [java, java基础]
 
 - 实现List接口的常用类有LinkedList，ArrayList，Vector和Stack
 
-<!-- more -->
+<!-- truncate -->
 
 ### List接口
 
@@ -67,5 +68,3 @@ WeakHashMap是一种改进的HashMap，它对key实行"弱引用"，如果一个
 - 如果程序在单线程环境中，或者访问仅仅在一个线程中进行，考虑非同步的类，其效率较高，如果多个线程可能同时操作一个类，应该使用同步的类。
 - 要特别注意对哈希表的操作，作为key的对象要正确复写equals和hashCode方法。
 - 尽量返回接口而非实际的类型，如返回List而非ArrayList，这样如果以后需要将ArrayList换成LinkedList时，客户端代码不用改变。这就是针对抽象编程.
-
-

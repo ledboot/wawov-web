@@ -1,13 +1,16 @@
 ---
-id: android-base
+slug: /2015/12/16/android-base
 title: Android基础
 date: 2015-12-16
+authors: [gwynn]
 tags: [Android, 面试]
 ---
 
 #### ThreadLocal
 
 ThreadLocal是如何做到为每一个线程维护变量的副本的呢？其实实现的思路很简单：在ThreadLocal类中有一个Map，用于存储每一个线程的变量副本，Map中元素的键为线程对象，而值对应线程的变量副本。
+
+<!-- truncate -->
 
 #### java.lang.ThreadLocal\<T\>的具体实现
 

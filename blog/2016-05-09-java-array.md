@@ -1,13 +1,18 @@
 ---
-id: java-array
+slug: /2016/05/09/java-array
 title: java 数组
 date: 2016-05-09
+authors: [gwynn]
 tags: [java, java基础]
 ---
 
 #### 一维数组
 
 ##### 数组初始化
+
+本文整理 Java 数组的初始化、遍历和常见操作，作为基础语法复习笔记。
+
+<!-- truncate -->
 
 ```java
 //静态初始化

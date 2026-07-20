@@ -2,6 +2,7 @@
 slug: side-project-going-global
 title: 用半年时间，断断续续做了一个出海 Side Project
 date: 2026-07-16
+authors: [gwynn]
 tags: [Side Project, 独立开发, Cloudflare, Stripe, 出海]
 ---
 

@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /img/
 Disallow: /search/
-Allow: /docs/
-Crawl-delay: 3
+Allow: /
 Sitemap: https://wawov.com/sitemap.xml
